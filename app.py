@@ -9,8 +9,8 @@ import os
 
 # -------- Load model & scaler safely --------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # customer-churn-project
-scaler = joblib.load(os.path.join(BASE_DIR, "notebooks", "scaler.pkl"))
-model = joblib.load(os.path.join(BASE_DIR, "notebooks", "model.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "models", "scaler.pkl"))
+model = joblib.load(os.path.join(BASE_DIR, "models", "model.pkl"))
 
 # -------- App UI --------
 st.title("Customer Churn Prediction App")
