@@ -7,7 +7,7 @@ A **Streamlit web application** that predicts whether a customer is likely to ch
 
 ---
 
-## 🔹 Features
+## Features
 
 - Predict customer churn based on:
   - **Age**
@@ -20,13 +20,34 @@ A **Streamlit web application** that predicts whether a customer is likely to ch
 
 ---
 
-## 🔹 Project Structure
-
+##  Project Structure
 customer-churn-project/
 │
-├─ app.py # Main Streamlit application
-├─ notebooks/
-│ ├─ scaler.pkl # Pre-trained scaler
-│ └─ best_model.pkl # Pre-trained ML model
-├─ requirements.txt # Python dependencies
-└─ README.md # Project overview
+├── .devcontainer/
+│   └── devcontainer.json
+│
+├── data/
+│   ├── raw/
+        └── customer_churn_data.csv
+│   └── processed/
+        ├── churn_cleaned.csv
+        ├── X.csv
+        └──y.csv
+
+│
+├── models/
+│   ├── model.pkl
+│   └── scaler.pkl
+│
+├── notebooks/
+│   ├── 00_data_cleaning_inspection.ipynb
+│   ├── 01_eda.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   ├── 03_model_training.ipynb
+│   ├── 04_model_evaluation.ipynb
+│   └── 05_inference.ipynb
+│
+├── app.py
+├── requirements.txt
+├── README.md
+└── .gitignore
