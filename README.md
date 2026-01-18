@@ -5,10 +5,9 @@
 
 A **Streamlit web application** that predicts whether a customer is likely to churn based on their demographics and subscription data. The app uses a pre-trained machine learning model and a scaler for data preprocessing. Fun balloon animation triggers when churn is predicted as **Yes**.
 
----
+Live App: https://customer-churn-prediction-cufoqxzmk3ppuxmcdjuaus.streamlit.app/
 
 ## Features
-
 - Predict customer churn based on:
   - **Age**
   - **Gender**
@@ -18,9 +17,8 @@ A **Streamlit web application** that predicts whether a customer is likely to ch
 - Balloon animation for churn = **Yes**
 - Quick deployment with Streamlit Community Cloud
 
----
-
 ##  Project Structure
+````
 customer-churn-project/
 │
 ├── .devcontainer/
@@ -29,7 +27,7 @@ customer-churn-project/
 ├── data/
 │   ├── raw/
         └── customer_churn_data.csv
-│   └── processed/
+    └── processed/
         ├── churn_cleaned.csv
         ├── X.csv
         └──y.csv
@@ -51,3 +49,21 @@ customer-churn-project/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+````
+## Tech Stack 
+- Python
+- Pandas, NumPy
+- Scikit-learn (SVM, preprocessing, evaluation)
+- Streamlit (interactive web app)
+- Git & GitHub
+
+## Run Locally
+git clone https://github.com/orishashakya/customer-churn-prediction.git
+cd customer-churn-prediction
+pip install -r requirements.txt
+streamlit run app.py
+
+## Author
+**Orisha Shakya – BSc. CSIT | Data Science & Machine Learning**
+- GitHub: https://github.com/orishashakya
+- LinkedIn: https://www.linkedin.com/in/orisha-shakya/
