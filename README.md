@@ -3,7 +3,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-App-blue)](https://streamlit.io/)  
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)  
 
-A **Streamlit web application** that predicts whether a customer is likely to churn based on their demographics and subscription data. The app uses a pre-trained machine learning model and a scaler for data preprocessing. Fun balloon animation triggers when churn is predicted as **Yes**.
+A **Streamlit web application** that predicts whether a  customer is likely to churn using a pre-trained Random Forest model. Users provide demographic and subscription data, and the app predicts churn probability with an interactive interface. Fun balloon animation triggers if churn is predicted as **Yes**.
 
 Live App: https://customer-churn-prediction-cufoqxzmk3ppuxmcdjuaus.streamlit.app/
 
@@ -15,6 +15,7 @@ Live App: https://customer-churn-prediction-cufoqxzmk3ppuxmcdjuaus.streamlit.app
   - **Monthly charges**
 - Interactive Streamlit UI for easy data input
 - Balloon animation for churn = **Yes**
+- Handles imbalanced classes with class weighting
 - Quick deployment with Streamlit Community Cloud
 
 ##  Project Structure
@@ -35,7 +36,6 @@ customer-churn-project/
 │
 ├── models/
 │   ├── model.pkl
-│   └── scaler.pkl
 │
 ├── notebooks/
 │   ├── 00_data_cleaning_inspection.ipynb
@@ -53,7 +53,7 @@ customer-churn-project/
 ## Tech Stack 
 - Python
 - Pandas, NumPy
-- Scikit-learn (SVM, preprocessing, evaluation)
+- Scikit-learn (Random Forest, preprocessing, evaluation)
 - Streamlit (interactive web app)
 - Git & GitHub
 
