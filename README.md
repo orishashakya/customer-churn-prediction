@@ -64,6 +64,6 @@ pip install -r requirements.txt
 streamlit run app.py
 
 ## Author
-**Orisha Shakya – BSc. CSIT | Data Science & Machine Learning**
+**Orisha Shakya | Data Science & Machine Learning**
 - GitHub: https://github.com/orishashakya
 - LinkedIn: https://www.linkedin.com/in/orisha-shakya/

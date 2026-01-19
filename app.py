@@ -7,10 +7,9 @@ import joblib
 import numpy as np
 import os
 
-# -------- Load model & scaler safely --------
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # customer-churn-project
-scaler = joblib.load(os.path.join(BASE_DIR, "models", "scaler.pkl"))
-model = joblib.load(os.path.join(BASE_DIR, "models", "model.pkl"))
+# -------- Load model safely --------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = joblib.load(os.path.join(BASE_DIR, "models", "model.pkl"))  # Random Forest
 
 # -------- App UI --------
 st.title("Customer Churn Prediction App")
@@ -36,16 +35,19 @@ if st.button("Predict"):
     gender_encoded = 1 if gender == "Female" else 0
 
     X = np.array([[age, gender_encoded, tenure, monthly_charge]])
-    X_scaled = scaler.transform(X)
 
-    prediction = model.predict(X_scaled)[0]
+    # Probability of churn
+    churn_prob = model.predict_proba(X)[0][1]
+
+    # Custom threshold for imbalanced data
+    THRESHOLD = 0.65
+    prediction = 1 if churn_prob >= THRESHOLD else 0
+
     result = "Yes" if prediction == 1 else "No"
 
     st.subheader("Prediction Result")
     st.success(f"Customer Churn: **{result}**")
+    st.write(f"Churn Probability: {churn_prob:.2f}")
 
-    # -------- Balloons effect if churn is Yes --------
     if result == "Yes":
         st.balloons()
-else:
-    st.info("Please enter values and click **Predict**.")
